@@ -24,7 +24,7 @@ jobs:
 #          tags: marak89/kurs-nginx:latest
 
   deploy_via_ssh:
-    needs: build_and_push
+#    needs: build_and_push
     runs-on: ubuntu-latest
 
     steps:
