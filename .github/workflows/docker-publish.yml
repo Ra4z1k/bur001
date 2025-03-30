@@ -1,4 +1,4 @@
-name: Deploy wp-stack01
+name: Deploy wp-stack-01
 on:
   push:
     branches: [ master ]
