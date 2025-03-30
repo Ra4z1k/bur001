@@ -1,5 +1,5 @@
 FROM wordpress:latest
 
-RUN apt update && apt install -y nano git && apt clean
+RUN apt update && apt upgrade -y && apt clean
 
 EXPOSE 80
