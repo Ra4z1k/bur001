@@ -1,5 +1,5 @@
 services:
-  wordpress:
+  wordpress01:
     image: wordpress:latest
     environment:
       WORDPRESS_DB_HOST: db:3306
@@ -7,7 +7,7 @@ services:
       WORDPRESS_DB_PASSWORD: secure_pass
       WORDPRESS_DB_NAME: wordpress01
     volumes:
-      - wordpress_data:/var/www/html
+      - wordpress_data01:/var/www/html
     deploy:
       replicas: 2
       restart_policy:
@@ -21,7 +21,7 @@ services:
     networks:
       - traefik-net
 
-  db:
+  db01:
     image: mysql:latest
     environment:
       MYSQL_ROOT_PASSWORD: root_secure_pass
@@ -29,7 +29,7 @@ services:
       MYSQL_USER: wordpress01
       MYSQL_PASSWORD: secure_pass
     volumes:
-      - db_data:/var/lib/mysql
+      - db_data01:/var/lib/mysql
     deploy:
       replicas: 1
       placement:
@@ -40,8 +40,8 @@ services:
       - traefik-net
 
 volumes:
-  wordpress_data:
-  db_data:
+  wordpress_data01:
+  db_data01:
 
 networks:
   traefik-net:
