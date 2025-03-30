@@ -47,7 +47,4 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
             cd ~/app
-#            docker login -u ${{ secrets.DOCKERHUB_USERNAME }} \
-#            -p ${{ secrets.DOCKERHUB_TOKEN  }}
-#            docker compose pull
             docker stack deploy -c docker-stack.yml wp-stack01
