@@ -20,19 +20,27 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - name: Build and load
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          load: true
+          tags: localtest/wp-stack01:latest
+
+      - name: Scan for vulnerabilities
+        uses: crazy-max/ghaction-container-scan@v3
+        with:
+          image: localtest/wp-stack01:latest
+          dockerfile: ./Dockerfile
+          severity_threshold: HIGH
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
           context: .
           file: ./Dockerfile
-          push: false
+          push: true
           tags: ra4z1k/wp-stack01:latest
-
-      - name: Scan for vulnerabilities
-        uses: crazy-max/ghaction-container-scan@v3
-        with:
-          image: ra4z1k/wp-stack01:latest
-
 
 #  deploy_via_ssh:
 #    needs: build_and_push
