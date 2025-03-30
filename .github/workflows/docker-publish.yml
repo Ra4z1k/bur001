@@ -3,6 +3,10 @@ on:
 #  push:
 #    branches: [ master ]
   workflow_dispatch:
+    inputs:
+     descr:
+        description: "Dodaj opis dla wykonania"
+        default: "Testowanie publikacji"
 
 jobs:
 #  build_and_push:
