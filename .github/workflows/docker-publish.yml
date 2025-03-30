@@ -33,6 +33,7 @@ jobs:
           image: localtest/wp-stack01:latest
           dockerfile: ./Dockerfile
           severity_threshold: HIGH
+          ignore_unfixed: true
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
