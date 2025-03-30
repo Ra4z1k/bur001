@@ -1,6 +1,6 @@
 services:
   wordpress01:
-    image: wordpress:latest
+    image: ra4z1k/wp-stack01:latest
     environment:
       WORDPRESS_DB_HOST: db01:3306
       WORDPRESS_DB_USER: wordpress01
