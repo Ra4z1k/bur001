@@ -2,7 +2,7 @@ services:
   wordpress01:
     image: wordpress:latest
     environment:
-      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_HOST: db01:3306
       WORDPRESS_DB_USER: wordpress01
       WORDPRESS_DB_PASSWORD: secure_pass
       WORDPRESS_DB_NAME: wordpress01
