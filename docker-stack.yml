@@ -14,7 +14,7 @@ services:
         condition: on-failure
       labels:
         - "traefik.enable=true"
-        - "traefik.http.routers.wordpress.rule=Host(`wordpress.vps1.m89.pl`)"
+        - "traefik.http.routers.wordpress.rule=Host(`wordpress01.vps1.m89.pl`)"
         - "traefik.http.routers.wordpress.entrypoints=websecure"
         - "traefik.http.routers.wordpress.tls.certresolver=le"
         - "traefik.http.services.wordpress.loadbalancer.server.port=80"
